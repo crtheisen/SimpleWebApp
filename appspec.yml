@@ -2,9 +2,9 @@
 version: 0.0
 os: linux 
 files:
-  - source:  /
+  - source:  /standard
     destination: /var/app/deploy/standard
-  - source:  /
+  - source:  /canary
     destination: /var/app/deploy/canary
 # Omitting permissions: section
 # Omitting some parts of hooks: section for now
