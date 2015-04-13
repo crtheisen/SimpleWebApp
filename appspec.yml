@@ -1,0 +1,49 @@
+#version must be 0.0 - do not change
+version: 0.0
+os: linux 
+files:
+  - source:  /
+    destination: /var/app/deploy/standard
+  - source:  /
+    destination: /var/app/deploy/canary
+# Omitting permissions: section
+# Omitting some parts of hooks: section for now
+hooks:
+# During the ApplicationStop deployment lifecycle event, run the commands 
+#   in the script specified in "location" starting from the root of the 
+#   revision's file bundle.
+#  ApplicationStop:
+#    - location: 
+#      timeout:
+#      runas:
+#    - location: 
+#      timeout:
+#      runas: 
+  BeforeInstall:
+    - location: scripts/install_dependencies
+      timeout: 300
+      runas: root
+#    - location: 
+#      timeout:
+#      runas:
+#  AfterInstall:
+#    - location:     
+#      timeout: 
+#      runas:
+#    - location: 
+#      timeout:
+#      runas:
+#  ApplicationStart:
+#    - location:     
+#      timeout: 
+#      runas:
+#    - location: 
+#      timeout:
+#      runas:
+#  ValidateService:
+#    - location:     
+#      timeout: 
+#      runas:
+#    - location: 
+#      timeout:
+#      runas:
